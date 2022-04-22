@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app.kubernetes.io/instance: sample-app
+    app.kubernetes.io/instance: app-svc-mon
   name: app-sample-svc
   namespace: app-sample
 spec:
