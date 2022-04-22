@@ -1,0 +1,10 @@
+#!/bin/bash
+
+
+# Access user workload prometheus UI by portforwarding prometheus pod & opening locally in browser
+
+# Port forward
+oc port-forward -n openshift-user-workload-monitoring pod/prometheus-user-workload-0 9090
+
+# Open locally in browser
+http://localhost:9090/targets

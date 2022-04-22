@@ -1,0 +1,16 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+    k8s-app: sample-svc-monitor
+  name: sample-svc-monitor
+  namespace: app-sample
+spec:
+  endpoints:
+  - interval: 30s
+    port: web #need to make sure matches name of svc's port
+    scheme: http
+  selector:
+    matchLabels:
+    app.kubernetes.io/instance: sample-app
+      #need to make sure matches svc's label
