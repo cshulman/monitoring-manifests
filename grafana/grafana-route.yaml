@@ -1,0 +1,16 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: grafana
+  namespace: custom-grafana
+spec:
+  port:
+    targetPort: grafana
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: grafana-service
+    weight: 100
+  wildcardPolicy: None
